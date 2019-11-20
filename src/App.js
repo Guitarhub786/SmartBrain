@@ -11,7 +11,7 @@ import './App.css';
 const app = new Clarifai.App({
   // insert your api key here
 
-  apiKey: ' !!!input api here!!! '
+  apiKey: ' insert api here '
 });
 
 const particlesOptions = {
@@ -47,7 +47,7 @@ class App extends Component {
       .then(
         function (response) {
           // do something with response
-          console.log(response);
+          console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
         },
         function (err) {
           // there was an error
